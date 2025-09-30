@@ -1,1 +1,1 @@
-print("Hello world")
+from src.simulationUavDB import SimulationUav1Info, SimulationUav2Info, SimulationUav3Info, SimulationUav4Info
