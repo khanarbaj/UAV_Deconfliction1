@@ -4,8 +4,20 @@ This project aims to address the problem of UAV (Unmanned Aerial Vehicle) deconf
 
 ## Project Structure
 
-- `config/` - Configuration files for the project.
-- `src/` - Source code for UAV deconfliction algorithms and related modules.
-- 'test/' - test code to test all possible scenarios
-- 'uav_info_def' - common defines
+- `config/`  
+  - `config.py` – Configuration parameters for UAVs and simulation.
+- `src/`  
+  - `main.py` – Main entry point for the UAV deconfliction system.
+  - `collision_detection.py` – Collision detection logic and utilities.
+  - `handle_input_data.py` – Handles input data for primary UAV.
+  - `simulationUavDB.py` – Simulation UAV data definitions.
+  - `waypoint_plot.py` – 3D plotting of UAV paths.
+- `uav_info_def/`  
+  - `__init__.py` – Package initializer for UAV info definitions.
+  - `uav_info.py` – UAV data structures (position, time window, etc.).
+- `test/`  
+  - `test_main.py` – Unit tests for main functionality.
+- `uav_deconfliction_research.txt` – Research content and references.
+- `architecture design decision.pptx` – Architecture and design documentation.
+
 
