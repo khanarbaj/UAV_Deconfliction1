@@ -1,6 +1,6 @@
 """This file stores the simulation UAV data"""
+
 from uav_info_def import *
-import random
 
 """--------------------------------------------- Simulation objects --------------------------------------------------"""
 SimulationUav1Info = UAV_Info(

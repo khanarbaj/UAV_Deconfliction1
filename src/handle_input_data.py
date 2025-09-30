@@ -7,11 +7,9 @@ class primaryUavData:
     )
     def get_PrimaryUav_data():
         print("Enter Primary UAV Data:")
-        print("flight start time in the form of hour,min")
-        hh,mm = map(int, input("Enter start time (hh mm): ").split())
+        hh,mm = map(int, input("Enter flight start time (hh mm): ").split())
         primaryUavData.primary_uav.time_window.start_time = UAV_TimeStamp(hh,mm)
-        print("flight end time in the form of hour,min")
-        hh,mm = map(int, input("Enter start time (hh mm): ").split())
+        hh,mm = map(int, input("Enter flight end time (hh mm): ").split())
         primaryUavData.primary_uav.time_window.end_time = UAV_TimeStamp(hh,mm)
         print("path in the form of 10 data points(x,y,z)")
         for i in range(10):
@@ -26,3 +24,9 @@ class primaryUavData:
         print("Path:")
         for pos in primaryUavData.primary_uav.path:
             print(f"({pos.x}, {pos.y}, {pos.z})")
+
+    def print_uav_info(uav_info: UAV_Info):
+        print("UAV Path:")
+        print(f"Time Window: {uav_info.time_window.start_time.hh}:{uav_info.time_window.start_time.min} to {uav_info.time_window.end_time.hh}:{uav_info.time_window.end_time.min}")
+        for pos in uav_info.path:
+            print(f"co-ordinates(x,y,z): ({pos.x}, {pos.y}, {pos.z})")

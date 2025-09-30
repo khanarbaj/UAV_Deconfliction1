@@ -1,9 +1,15 @@
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+src_dir = os.path.join(project_root, 'src')
+if project_root not in sys.path:
+    sys.path.append(project_root)
+if src_dir not in sys.path:
+    sys.path.append(src_dir)
 from uav_info_def import *
 from collision_detection import HandleCollission
 from handle_input_data import primaryUavData
+from src.simulationUavDB import SimulationUavInfo
 
 
 def main():
@@ -16,6 +22,9 @@ def main():
     print("Welcome to UAV Deconfliction System")
     print("===================================")
     primary_uav = primaryUavData.get_PrimaryUav_data()
+    #primaryUavData.print_PrimaryUav_data()
+    #primaryUavData.print_uav_info(SimulationUavInfo[3])
+    print("===================================")
     HandleCollission.detect_collision(primary_uav)
 
 
