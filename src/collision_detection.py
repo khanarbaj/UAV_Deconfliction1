@@ -36,13 +36,13 @@ class HandleCollission:
                 (primary_uav_info.time_window.start_time.hh == sim_uav.time_window.end_time.hh and 
                  primary_uav_info.time_window.start_time.min >= sim_uav.time_window.end_time.min)
             ):
-                #print(f"condition 1 met for Simulation UAV {index+1}") #for debugging purpose
+                 #print(f"condition 1 met for Simulation UAV {index+1}") #for debugging purpose
                 # check if x,y,z coordinates overlap
                 for pos1 in primary_uav_info.path:
                     for pos2 in sim_uav.path:
                         if ((abs(pos1.x - pos2.x) < HandleCollission.SafeDistance[index]) and 
                             (abs(pos1.y - pos2.y) < HandleCollission.SafeDistance[index]) and 
-                            (abs(pos1.z - pos2.z) < HandleCollission.SafeDistance[index])          # safe distance for z axis can be reduced but for simplicity I have kept is uniform
+                            (abs(pos1.z - pos2.z) < HandleCollission.SafeDistance[index])
                             ):
                             HandleCollission.detectedDistance[index] = UAV_DetectedDistance(
                                 abs(pos1.x - pos2.x),
@@ -72,6 +72,6 @@ class HandleCollission:
     def print_uav_info(uav_info: UAV_Info):
         print("UAV Path:")
         for pos in uav_info.path:
-            print(f"Common co-ordinates(x,y,z): ({pos.x}, {pos.y}, {pos.z})")
-        print(f"Common Time Window: {uav_info.time_window.start_time.hh}:{uav_info.time_window.start_time.min} to {uav_info.time_window.end_time.hh}:{uav_info.time_window.end_time.min}")
+            print(f"co-ordinates(x,y,z): ({pos.x}, {pos.y}, {pos.z})")
+        print(f"Time Window: {uav_info.time_window.start_time.hh}:{uav_info.time_window.start_time.min} to {uav_info.time_window.end_time.hh}:{uav_info.time_window.end_time.min}")
 
