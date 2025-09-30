@@ -10,6 +10,7 @@ if src_dir not in sys.path:
 from config.config import PrimaryUavRadius, SimulationUavRadius
 from uav_info_def import *
 from src.simulationUavDB import SimulationUavInfo
+from src.waypoint_plot import PlotUAVPaths
 
 
 class HandleCollission:
@@ -61,6 +62,8 @@ class HandleCollission:
         if HandleCollission.FinalCollisionResult == False:
             print("clear")
 
+        HandleCollission.plot_paths(primary_uav_info)
+
     def PrintCollissionInfo(index):
 
         print(f"Collision detected with Simulation UAV {index+1}")
@@ -74,4 +77,7 @@ class HandleCollission:
         for pos in uav_info.path:
             print(f"co-ordinates(x,y,z): ({pos.x}, {pos.y}, {pos.z})")
         print(f"Time Window: {uav_info.time_window.start_time.hh}:{uav_info.time_window.start_time.min} to {uav_info.time_window.end_time.hh}:{uav_info.time_window.end_time.min}")
+
+    def plot_paths(primary_uav_info: UAV_Info):
+        PlotUAVPaths.plot_uav_paths(SimulationUavInfo[0].path)
 
