@@ -1,1 +1,1 @@
-from .uav_info import UAV_TimeStamp, UAV_TimeWindow, UAV_Pos, UAV_Info
+from .uav_info import UAV_TimeStamp, UAV_TimeWindow, UAV_Pos, UAV_Info, UAV_DetectedDistance

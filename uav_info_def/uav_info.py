@@ -27,3 +27,9 @@ class UAV_Info:
         """
         self.path = path  # list of UAV_Pos
         self.time_window = time_window
+
+class UAV_DetectedDistance:
+    def __init__(self, x_distance, y_distance, z_distance):
+        self.x_distance = x_distance
+        self.y_distance = y_distance
+        self.z_distance = z_distance

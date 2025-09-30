@@ -1,3 +1,4 @@
-#define UAV_SIZE 20
+from src.simulationUavDB import SimulationUavInfo
 
-#define UAV_MIN_SEPARATION 50  # minimum separation distance between UAVs in meters
+PrimaryUavRadius = 50  # in centimeters - assumption
+SimulationUavRadius = [50] * len(SimulationUavInfo)  # in centimeters - assumption. It can be different for different simulation UAVs
