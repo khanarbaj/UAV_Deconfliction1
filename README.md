@@ -2,6 +2,10 @@
 
 This project aims to address the problem of UAV (Unmanned Aerial Vehicle) deconfliction, ensuring safe and efficient operation of multiple UAVs in shared airspace.
 
+To run the application:
+1. open command prompt and change directory to 'src'
+2. run command 'python main.py'
+
 ## Project Structure
 
 - `config/`  
